@@ -155,6 +155,7 @@ body {
 }
 
 /* side text */
+
 h5 {
   writing-mode:sideways-lr;
   margin-block-start: -45px;
@@ -309,7 +310,7 @@ h5 {
   top:10px;
 }
 
-@media all and (max-width:350px) {
+@media all and (max-width:780px) {
   .notify-bubble {
     color: rgb(0, 0, 0);
     font-size: 0.55em;
@@ -318,3 +319,5 @@ h5 {
     
   }
 }
+
+
