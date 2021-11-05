@@ -309,7 +309,7 @@ h5 {
   top:10px;
 }
 
-@media all and (max-width:780px) {
+@media all and (max-width:350px) {
   .notify-bubble {
     color: rgb(0, 0, 0);
     font-size: 0.55em;
