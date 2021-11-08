@@ -16,8 +16,11 @@ body {
  right:40px;
  top: 140px;
  position: absolute;
- background-color: #ffffff00;
- 
+ color: #3a495e; 
+}
+
+.btn:hover{
+  color: #460101;
 }
 
 .btn-outline  {
