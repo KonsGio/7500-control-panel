@@ -40,7 +40,7 @@ export default {
       User.append("password", this.form.password);
       try {
           await this.LogIn(User);
-          this.$router.push("/posts");
+          this.$router.push("/home");
           this.showError = false
       } catch (error) {
         this.showError = true
@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 * {
   box-sizing: border-box;
 }
