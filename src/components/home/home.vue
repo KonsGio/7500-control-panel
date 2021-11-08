@@ -236,7 +236,7 @@ export default {
     },
     mounted() {
       this.polling = setInterval(() => {
-      fetch("http://10.0.9.126/api/v1/lum/panel/status")
+      fetch("http://10.0.9.127/api/v1/lum/panel/status")
       .then(response => response.json() )
       .then(data => this.panel = data)
       .catch(err => consol.log(err.message))
