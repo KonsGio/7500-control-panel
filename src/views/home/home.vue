@@ -231,9 +231,6 @@ export default {
             return this.$store.state.users.all;
         }
     },
-    created () {
-        this.$store.dispatch('users/getAll');
-    },
     mounted() {
       this.polling = setInterval(() => {
       fetch("http://10.0.9.127/api/v1/lum/panel/status")
