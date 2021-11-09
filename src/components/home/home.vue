@@ -1,9 +1,6 @@
 <template>
 
   <div id="home" >    
-    <Button @click="openSignIn" v-tooltip.bottom="'Cannot be closed by clicking outside'">
-        Sign in form
-      </Button>     
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <img src="./olympialogo.png" class="logo">
       <div class="btn-group" role="group">
@@ -218,22 +215,13 @@
             </ul>       
         </div>  
      </div> 
-     <ModalRoot />
   </div>
 </template>
 
 <script>
-import ModalBus from '@/eventBus'
-import ModalRoot from '@/components/ModalRoot'
-import Button from '@/components/common/Button'
-import SignInForm from '@/components/examples/SignInForm'
 import UserService from '@/services/user.service.js'
 export default {
   name: "home",
-  components: {
-    Button,
-    ModalRoot
-  },
   data() {
     return {
       content: "",
@@ -262,33 +250,20 @@ export default {
     );
 
 },
-  beforeDestroy () {
-	clearInterval(this.polling)
-}, methods: {
+  methods: {
     logOut() {
       this.$store.dispatch('auth/logout');
       this.$router.push('/');
     }
-  },
-    openClosableInside () {
-      ModalBus.$emit('open', { component: ClosableInside, title: 'Close dialog from component' })
-    },
-    openSignIn () {
-      ModalBus.$emit('open', { component: SignInForm, title: 'New user', closeOnClick: false })
-    }
+  }, beforeDestroy () {
+	clearInterval(this.polling)
+}
 }
 
 
 </script>
 
 <style lang="scss" scoped>
-@import "./home.css";
-.content {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center
-}
+@import "./home.css"
+  
 </style>
