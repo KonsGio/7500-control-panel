@@ -102,7 +102,7 @@
                     8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
                    </svg>
               </li> 
-      </ul>
+      </ul> <h3>{{ content }}</h3>
       <div class="container" > 
                 <ul class="row">
                   <li>
@@ -216,20 +216,14 @@
 </template>
 
 <script>
+
 export default {
   name: "home",
   data() {
     return {
+      content: "",
         panel:[]
     }
-    },
-    computed: {
-        user () {
-            return this.$store.state.authentication.user;
-        },
-        users () {
-            return this.$store.state.users.all;
-        }
     },
     mounted() {
       this.polling = setInterval(() => {
@@ -237,8 +231,22 @@ export default {
       .then(response => response.json() )
       .then(data => this.panel = data)
       .catch(err => consol.log(err.message))
-    },5000)
-  },
+    },5000),
+     UserService.getPublicContent().then(
+      (response) => {
+        this.content = response.data;
+      },
+      (error) => {
+        this.content =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString();
+      }
+    );
+
+},
   beforeDestroy () {
 	clearInterval(this.polling)
 }

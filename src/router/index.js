@@ -1,67 +1,39 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import store from "../store";
-import home from '@/views/home/home.vue'
-import Register from '@/views/Register'
-import login from "@/views/login";
-import Posts from "@/views/Posts";
-
-Vue.use(VueRouter);
-
+import { createWebHistory, createRouter } from "vue-router";
+import home from "@/components/home/home";
+import login from "@/components/login/login";
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: home,
   },
   {
-    path: "/register",
-    name: "Register",
-    component: Register,
-    meta: { guest: true },
+    path: "/home",
+    component: home,
   },
   {
     path: "/login",
-    name: "Login",
     component: login,
-    meta: { guest: true },
-  },
-  {
-    path: "/posts",
-    name: "Posts",
-    component: Posts,
-    meta: { requiresAuth: true },
-  },
+  }
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(),
   routes,
 });
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (store.getters.isAuthenticated) {
-      next();
-      return;
-    }
-    next("/login");
-  } else {
-    next();
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   const publicPages = ['/login', '/register', '/home'];
+//   const authRequired = !publicPages.includes(to.path);
+//   const loggedIn = localStorage.getItem('user');
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.guest)) {
-    if (store.getters.isAuthenticated) {
-      next("/posts");
-      return;
-    }
-    next();
-  } else {
-    next();
-  }
-});
+//   // trying to access a restricted page + not logged in
+//   // redirect to login page
+//   if (authRequired && !loggedIn) {
+//     next('/login');
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;
