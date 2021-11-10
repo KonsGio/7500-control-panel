@@ -60,6 +60,7 @@ body {
   display: flex;
   position: relative;
   align-items: center;
+  justify-content: center;
   top: 170px; /*timi fix*/ 
 }
 
