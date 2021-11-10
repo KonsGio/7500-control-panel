@@ -215,6 +215,8 @@ color:#ffffff;
 text-align:center;
 transition: all 0.2s;
 background-color: #b0b6c2;
+margin-top:10px;
+
 }
 .btn-login:hover{
 color:#ffffff;
@@ -223,7 +225,7 @@ background-color:#6a768800;
 @media all and (max-width:560px) {
 .btn-login {
   display:block;
-  margin:0.4em auto;
+  margin-top:10px;
 } 
 }
 .error-feedback {
