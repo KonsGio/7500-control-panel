@@ -178,7 +178,6 @@ label {
   background: #6a7688;  
   color: rgb(255, 255, 255);
   border-style:double;
-  border-width:5px;  
   display: inline-block;
   list-style-type: none;
   clear: both;

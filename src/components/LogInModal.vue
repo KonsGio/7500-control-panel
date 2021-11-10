@@ -132,7 +132,7 @@ export default {
   
   .modal-inner {
     position: relative;
-    max-width: 500px;
+    max-width: 300px;
     border-radius: 15px;
     height: 500px;
     box-shadow: 0 4px 6px -1px rgb(54, 52, 52), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -169,10 +169,9 @@ export default {
   }
  
 .form{
-  height: 90%;
-  max-width: 60%;
+  height: 90%;;
   margin-top:20px;
-  margin-left: 85px;
+  margin-left: 0px;
   border-radius: 10px;
   border-color: #b0b6c2;
   background: #b0b6c2;  
