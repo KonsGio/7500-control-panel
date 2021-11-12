@@ -225,7 +225,7 @@
 
 <script>
 import UserService from '@/services/user.service.js'
-import Modal from '@/components/LogInModal'
+import Modal from '@/components/login/LogInModal'
 import {ref} from 'vue'
 export default {
   name: "home",

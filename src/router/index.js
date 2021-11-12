@@ -14,6 +14,10 @@ const routes = [
   {
     path: "/login",
     component: login,
+  },
+  {
+    path: "/technician",
+    component: technician,
   }
 ];
 
