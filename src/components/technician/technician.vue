@@ -108,9 +108,6 @@
                    </svg>
               </li> 
       </ul> 
-      <!-- <header class="jumbotron">
-      <h3>{{ content }}</h3>
-    </header> -->
       <div class="container" > 
                 <ul class="row">
                   <li>
