@@ -62,7 +62,7 @@ export default {
       .then(data => this.panel = data)
       .catch(err => console.log(err.message))
     },5000),
-     UserService.getPublicContent().then(
+     UserService.gettech().then(
       (response) => {
         this.content = response.data;
       },

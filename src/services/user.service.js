@@ -8,7 +8,7 @@ class UserService {
     return axios.get(API_URL +'api/v1/panel/status',{ headers: authHeader() });
   }
 
-  // getUserBoard() {
+  // gettech() {
   //   return axios.get(API_URL + 'user', { headers: authHeader() });
   // }
 
